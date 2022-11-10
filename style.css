@@ -5,14 +5,44 @@ body {
 	background-color: #bf737d;
 	width: 100%;
 	height: 100%;
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 canvas {
-	/* position: absolute; */
 	width: 100%;
 	height: 100%;
+}
+
+.btn {
+	position: absolute;
+	top: 400px;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	background-color: tomato;
+	transform: rotate(-45deg) translateY(-50%);
+}
+.btn::before {
+	content: '';
+	position: absolute;
+	top: -10px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: tomato;
+}
+
+.btn::after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: tomato;
 }
 
 .card {
@@ -59,7 +89,7 @@ canvas {
 	border: 10px solid #73bfb5;
 	backface-visibility: hidden;
 	background-color: #73a3bf;
-	/* background-image: url($cover-image); */
+	z-index: 99;
 	background-size: contain;
 	transform-style: preserve-3d;
 	transform-origin: 0% 50%;
@@ -231,13 +261,13 @@ canvas {
 	top: 21px;
 	left: 75px;
 	transform: skewY(-18deg);
-  width: 16px;
+	width: 16px;
 }
 .drip6 {
 	top: 17px;
 	left: 90px;
 	transform: skewY(-35deg);
-  width: 10px;
+	width: 10px;
 }
 
 .candle {
