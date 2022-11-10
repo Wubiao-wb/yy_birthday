@@ -7,6 +7,11 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 	</head>
 	<body>
+		<audio
+			loop="loop"
+			preload="auto"
+			src="./RADWIMPS - 三葉のテーマ (三叶的主题音乐).mp3"
+		></audio>
 		<div class="card">
 			<div class="back"></div>
 			<div class="front">
@@ -45,17 +50,21 @@
 			<div class="btn"></div>
 		</div>
 		<canvas id="pinkboard"></canvas>
-		<audio
-			autoplay="autoplay"
-			loop="loop"
-			src="./RADWIMPS - 三葉のテーマ (三叶的主题音乐).mp3"
-		></audio>
 	</body>
 	<script>
 		const btn = document.querySelector('.btn')
 		const cardHTML = document.querySelector('.card')
 		const bodyDom = document.querySelector('body')
+
+		let flag = true
+
 		btn.addEventListener('click', function () {
+			if(flag) {
+				document.getElementsByTagName('audio')[0].play()
+			} else {
+				document.getElementsByTagName('audio')[0].pause()
+			}
+			flag = !flag
 			// cardHTML.style.visibilty = 'hidden'
 			cardHTML.style.display = 'none'
 			bodyDom.style.backgroundColor = 'black'
